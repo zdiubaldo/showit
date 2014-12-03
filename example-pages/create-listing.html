@@ -33,7 +33,7 @@
 
         geocoder.geocode({
             'address': address
-        }, function(results, status) {
+        }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
                 map.setCenter(results[0].geometry.location);
@@ -55,7 +55,7 @@
 
         geocoder.geocode({
             'address': address
-        }, function(results, status) {
+        }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
                 map.setCenter(results[0].geometry.location);
@@ -73,51 +73,59 @@
 </script>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> 
-                </button>
-                <a class="navbar-brand" href="#">GoShow</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
-                    </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Listings</a>
-                    </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search Listing</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Settings</a>
-                    </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GoShow</a>
         </div>
-    </nav>
-    <div id="map-canvas"></div>
-    <table class="table table-bordered table-condensed">
-        <tbody>
-            <tr>
-                <td>
-                    <a href="#">Job 1</a>
-                </td>
-                <td class="align-right">
-                    <div class=class='text-center'>
-                        <button class="btn btn-primary">View</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Listings</a>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search Listing</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Settings</a>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<a href="#Foo" class="btn btn-default" data-toggle="collapse">Toggle Foo</a>
+<button href="#Bar" class="btn btn-default" data-toggle="collapse">Toggle Bar</button>
+<div id="Foo" class="collapse">
+    This div (Foo) is hidden by default
+</div>
+<div id="Bar" class="collapse in">
+    This div (Bar) is shown by default and can toggle
+</div>
+<div id="map-canvas"></div>
+<table class="table table-bordered table-condensed">
+    <tbody>
+    <tr>
+        <td>
+            <a href="#">Job 1</a>
+        </td>
+        <td class="align-right">
+            <div class=class='text-center'>
+                <button class="btn btn-primary">View</button>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
