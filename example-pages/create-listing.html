@@ -101,13 +101,45 @@
         </div>
     </div>
 </nav>
-<a href="#Foo" class="btn btn-default" data-toggle="collapse">Toggle Foo</a>
-<button href="#Bar" class="btn btn-default" data-toggle="collapse">Toggle Bar</button>
+
+<a href="#Foo" class="btn btn-default glyphicon glyphicon-plus" data-toggle="collapse">Add Listing</a>
 <div id="Foo" class="collapse">
-    This div (Foo) is hidden by default
-</div>
-<div id="Bar" class="collapse in">
-    This div (Bar) is shown by default and can toggle
+    <form role="form">
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Address">
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="MLS Number">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Private Listing
+            </label>
+        </div>
+        <a href="#Foo2" class="btn btn-default glyphicon glyphicon-plus" data-toggle="collapse">Add Listing</a>
+        <div id="Foo2" class="collapse">
+            <form role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Address">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="MLS Number">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Private Listing
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 </div>
 <div id="map-canvas"></div>
 <table class="table table-bordered table-condensed">
