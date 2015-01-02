@@ -1,14 +1,50 @@
+<!-- simple-todos.html -->
 <head>
-  <title>showit</title>
+  <title>Todo List</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    <header>
+      <h1>Current Showings Listed ({{incompleteCount}})</h1>
+      <!-- add the checkbox to <body> right below the h1 -->
+      <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Showings
+      </label>
+      {{> loginButtons}}
+    </header>
 
-  {{> hello}}
+    {{#if currentUser}}
+    <!-- add a form below the h1 -->
+    <form class="new-showing">
+      <input type="text" name="text" placeholder="Type to add new Showings" />
+    </form>
+    {{/if}}
+
+    <ul>
+      {{#each Showings}}
+      {{> showing}}
+      {{/each}}
+    </ul>
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="showing">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    {{#if isOwner}}
+    <button class="toggle-private">
+      {{#if private}}
+      Private
+      {{else}}
+      Public
+      {{/if}}
+    </button>
+    {{/if}}
+
+    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+  </li>
 </template>
