@@ -1,4 +1,4 @@
-<template name="join">
+<template name="profile">
   <div class="page auth">
     <nav>
       <div class="nav-group">
@@ -8,8 +8,8 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Join.</h1>
-        <p class="subtitle-auth" >Joining allows you to make private lists</p>
+        <h1 class="title-auth">Edit Profile</h1>
+        <p class="subtitle-auth" ></p>
 
         <form>
           {{#if errorMessages}}
@@ -21,18 +21,23 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="email" name="email" placeholder="Your Email" />
-            <span class="icon-email" title="Your Email"></span>
+            <input type="text" name="firstName" placeholder="First Name" />
+            <span class="icon-email" title="First Name"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
-            <input type="password" name="password" placeholder="Password" />
-            <span class="icon-lock" title="Password"></span>
+            <input type="text" name="lastName" placeholder="Last Name" />
+            <span class="icon-lock" title="Last Name"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="password" name="confirm" placeholder="Confirm Password" />
-            <span class="icon-lock" title="Confirm Password"></span>
+            <input type="text" name="country" placeholder="Coutry" />
+            <span class="icon-lock" title="Country"></span>
+          </div>
+
+          <div class="input-symbol  {{errorClass 'email'}}">
+            <input type="text" name="city" placeholder="City" />
+            <span class="icon-email" title="City"></span>
           </div>
 
           <button type="submit" class="btn-primary">Join Now</button>

@@ -1,10 +1,10 @@
-var ERRORS_KEY = 'joinErrors';
+var ERRORS_KEY = 'profileErrors';
 
-Template.join.created = function() {
+Template.profile.created = function() {
   Session.set(ERRORS_KEY, {});
 };
 
-Template.join.helpers({
+Template.profile.helpers({
   errorMessages: function() {
     return _.values(Session.get(ERRORS_KEY));
   },
@@ -13,15 +13,41 @@ Template.join.helpers({
   }
 });
 
-Template.join.events({
+Template.profile.events({
   'submit': function(event, template) {
     event.preventDefault();
+
+    // grab the updated profile data and put it into a single obj
+    var profile = {
+      firstName: template.$('[name=firstName]').val(),
+      lastName: template.$('[name=lastName]').val(),
+      country: template.$('[name=country]').val(),
+      city: template.$('[name=city]').val()
+    },
+    user = {
+      profile: profile
+    }
+
+
+    /*
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
+    */
 
     var errors = {};
 
+    Meteor.call('updateUser', user, function(err){
+      if(err) {
+        console.log(err);
+      } else {
+        //Notifications.info('Profile updated!', 'Successfully saved.');
+      }
+    });
+
+    Router.go('home');
+
+    /*
     if (! email) {
       errors.email = 'Email required';
     }
@@ -49,5 +75,6 @@ Template.join.events({
 
       Router.go('home');
     });
+    */
   }
 });
