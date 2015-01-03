@@ -21,30 +21,28 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="text" name="firstName" placeholder="First Name" />
+            <input type="text" name="firstName" placeholder={{getCurrentFirstName}} />
             <span class="icon-email" title="First Name"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
-            <input type="text" name="lastName" placeholder="Last Name" />
+            <input type="text" name="lastName" placeholder={{getCurrentLastName}} />
             <span class="icon-lock" title="Last Name"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="text" name="country" placeholder="Coutry" />
+            <input type="text" name="country" placeholder={{getCurrentCountry}} />
             <span class="icon-lock" title="Country"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="text" name="city" placeholder="City" />
+            <input type="text" name="city" placeholder={{getCurrentCity}} />
             <span class="icon-email" title="City"></span>
           </div>
 
-          <button type="submit" class="btn-primary">Join Now</button>
+          <button type="submit" class="btn-primary">Save Profile</button>
         </form>
       </div>
-
-      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Have an account? Sign in</a>
-    </div>
+  </div>
   </div>
 </template>

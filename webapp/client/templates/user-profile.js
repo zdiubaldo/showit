@@ -8,8 +8,25 @@ Template.profile.helpers({
   errorMessages: function() {
     return _.values(Session.get(ERRORS_KEY));
   },
+
   errorClass: function(key) {
     return Session.get(ERRORS_KEY)[key] && 'error';
+  },
+
+  getCurrentFirstName: function() {
+    return  Meteor.user().profile.firstName;
+  },
+
+  getCurrentLastName: function() {
+    return  Meteor.user().profile.lastName;
+  },
+
+  getCurrentCountry: function() {
+    return  Meteor.user().profile.country;
+  },
+
+  getCurrentCity: function() {
+    return  Meteor.user().profile.city;
   }
 });
 
