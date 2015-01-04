@@ -58,7 +58,16 @@ Router.map(function() {
   this.route('home', {
     path: '/',
     action: function() {
-      Router.go('listsShow', Lists.findOne());
+      /*
+         before we let them into the site we want to make sure they
+         have a profile filled out
+         TODO: add more checks here
+       */
+      if (Meteor.user().profile.firstName.length === 0) {
+        Router.go('profile', Lists.findOne());
+      } else {
+        Router.go('listsShow', Lists.findOne());
+      }
     }
   });
 });
