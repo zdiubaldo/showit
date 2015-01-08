@@ -21,22 +21,22 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="text" name="firstName" placeholder={{getCurrentFirstName}} />
+            <input type="text" name="firstName" placeholder="Address" value={{getCurrentFirstName}} />
             <span class="icon-email" title="First Name"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
-            <input type="text" name="lastName" placeholder={{getCurrentLastName}} />
+            <input type="text" name="lastName" placeholder="Last Name" value={{getCurrentLastName}} />
             <span class="icon-lock" title="Last Name"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="text" name="country" placeholder={{getCurrentCountry}} />
+            <input type="text" name="country" placeholder="Country" value={{getCurrentCountry}} />
             <span class="icon-lock" title="Country"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="text" name="city" placeholder={{getCurrentCity}} />
+            <input type="text" name="city" placeholder="City" value={{getCurrentCity}} />
             <span class="icon-email" title="City"></span>
           </div>
 
