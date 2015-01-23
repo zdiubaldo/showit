@@ -34,6 +34,7 @@ Router.map(function() {
   this.route('join');
   this.route('signin');
   this.route('profile');
+  this.route('createShowing');
 
   this.route('listsShow', {
     path: '/lists/:_id',
