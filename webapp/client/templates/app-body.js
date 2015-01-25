@@ -129,6 +129,11 @@ Template.appBody.events({
 
     Router.go('listsShow', list);
   },
+  
+  
+  'click .js-current-showings': function() {
+    Router.go('home');
+  },
 
   'click .js-new-showing': function() {
     //var list = {name: Lists.defaultName(), incompleteCount: 0};
