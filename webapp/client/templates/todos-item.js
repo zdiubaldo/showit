@@ -9,7 +9,12 @@ Template.todosItem.helpers({
   },
   isOwner: function () {
       return this.showingOwner === Meteor.userId();
-    }    
+  },
+  
+  isAcceptedOwner: function () {
+      return this.showingAcceptedBy === Meteor.userId();
+  },
+    
 });
 
 Template.todosItem.events({
@@ -49,5 +54,16 @@ Template.todosItem.events({
     Todos.remove(this._id);
     if (! this.checked)
       Lists.update(this.listId, {$inc: {incompleteCount: -1}});
+  },
+  
+  'mousedown .js-accept-item, click .js-accept-item': function() {
+    Todos.update(this._id, { $set: { showingAcceptedBy: Meteor.userId() } });
+      
+  },
+
+  'mousedown .js-unaccept-item, click .js-unaccept-item': function() {
+    Todos.update(this._id, { $set: { showingAcceptedBy: "" } });
+      
   }
+    
 });

@@ -8,7 +8,11 @@
     {{#if isOwner}}
       <button class="btn-primary js-delete-item">Remove</button>
     {{else}}
-      <button class="btn-primary js-delete-item">Accept</button>
+      {{#if isAcceptedOwner}}
+        <button class="btn-primary js-unaccept-item">UnAccept</button>
+      {{else}}
+        <button class="btn-primary js-accept-item">Accept</button>
+      {{/if}}
     {{/if}}
   </div>
 </template>
