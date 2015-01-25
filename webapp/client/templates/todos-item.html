@@ -6,6 +6,10 @@
     </label>
 
     <input type="text" value="{{showingAddress}}" placeholder="Task name">
-    <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
+    {{#if isOwner}}
+      <button class="btn-primary js-delete-item">Remove</button>
+    {{else}}
+      <button class="btn-primary js-delete-item">Accept</button>
+    {{/if}}
   </div>
 </template>

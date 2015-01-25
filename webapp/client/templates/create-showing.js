@@ -160,11 +160,11 @@ Template.createShowing.events({
   'submit .js-showing-new': function(event) {
     //console.log('testings');
     event.preventDefault();
-    //console.log(event);
+    console.log(Meteor.user());
 
     Todos.insert({
       listId: this._id,
-      showingOwner: Meteor.user().userName,
+      showingOwner: Meteor.userId(),
       showingDate: event.target.showingDate.value,
       showingAddress: event.target.showingAddress.value,
       showingCity: event.target.showingCity.value,

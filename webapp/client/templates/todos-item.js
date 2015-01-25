@@ -6,7 +6,10 @@ Template.todosItem.helpers({
   },
   editingClass: function() {
     return Session.equals(EDITING_KEY, this._id) && 'editing';
-  }
+  },
+  isOwner: function () {
+      return this.showingOwner === Meteor.userId();
+    }    
 });
 
 Template.todosItem.events({
