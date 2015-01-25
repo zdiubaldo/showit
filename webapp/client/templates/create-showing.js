@@ -165,6 +165,7 @@ Template.createShowing.events({
     Todos.insert({
       listId: this._id,
       showingOwner: Meteor.user().userName,
+      showingDate: event.target.showingDate.value,
       showingAddress: event.target.showingAddress.value,
       showingCity: event.target.showingCity.value,
       showingZip: event.target.showingZip.value,

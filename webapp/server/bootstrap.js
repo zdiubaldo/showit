@@ -2,6 +2,7 @@
 Meteor.startup(function () {
   if (Lists.find().count() === 0) {
     var data = [
+    /*
       {name: "Meteor Principles",
        items: ["Data on the Wire",
          "One Language",
@@ -24,13 +25,9 @@ Meteor.startup(function () {
          "6502 Assembly"
          ]
       },
-      {name: "Favorite Scientists",
-       items: ["Ada Lovelace",
-         "Grace Hopper",
-         "Marie Curie",
-         "Carl Friedrich Gauss",
-         "Nikola Tesla",
-         "Claude Shannon"
+      */
+      {name: "Default Showings",
+       items: ["1100 Ivy St"
        ]
       }
     ];
@@ -41,8 +38,9 @@ Meteor.startup(function () {
         incompleteCount: list.items.length});
 
       _.each(list.items, function(text) {
-        Todos.insert({listId: list_id,
-                      text: text,
+        Todos.insert({listId: "default",
+                      showingAddress: text,
+                      ShowingDate: "2015-01-01",
                       createdAt: new Date(timestamp)});
         timestamp += 1; // ensure unique timestamp.
       });

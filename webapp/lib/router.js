@@ -41,17 +41,23 @@ Router.map(function() {
     // subscribe to todos before the page is rendered but don't wait on the
     // subscription, we'll just render the items as they arrive
     onBeforeAction: function () {
+      console.log("listshow: here1");
       this.todosHandle = Meteor.subscribe('todos', this.params._id);
+                console.log("listshow: here2");
 
       if (this.ready()) {
         // Handle for launch screen defined in app-body.js
         dataReadyHold.release();
+          console.log("listshow: here3");
       }
+        console.log("listshow: here4");
     },
     data: function () {
-      return Lists.findOne(this.params._id);
+        console.log("listshow: here5");
+      return Lists.findOne();
     },
     action: function () {
+        console.log("listshow: here6");
       this.render();
     }
   });
@@ -59,15 +65,19 @@ Router.map(function() {
   this.route('home', {
     path: '/',
     action: function() {
+        console.log("home: here1");
       /*
          before we let them into the site we want to make sure they
          have a profile filled out
          TODO: add more checks here
        */
-      if (Meteor.user().profile.firstName.length === 0) {
+      if (!Meteor.user().profile) {
         Router.go('profile', Lists.findOne());
+          console.log("home: here2");
       } else {
+          console.log("home: here3");
         Router.go('listsShow', Lists.findOne());
+          console.log("home: here4");
       }
     }
   });
