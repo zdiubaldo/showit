@@ -42,7 +42,8 @@ Template.createShowing.helpers({
   },
 
   todos: function(listId) {
-    return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+    return Todos.find();
+      //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
   }
 });
 
@@ -157,9 +158,9 @@ Template.createShowing.events({
   },
 
   'submit .js-showing-new': function(event) {
-    console.log('testings');
+    //console.log('testings');
     event.preventDefault();
-    console.log(event);
+    //console.log(event);
 
     Todos.insert({
       listId: this._id,
@@ -174,7 +175,7 @@ Template.createShowing.events({
     });
 
 
-    console.log("done")
+    //console.log("done")
 
     Router.go('home')
 

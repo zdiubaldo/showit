@@ -13,7 +13,8 @@ Meteor.publish('privateLists', function() {
 Meteor.publish('todos', function(listId) {
   check(listId, String);
 
-  return Todos.find({listId: listId});
+    return Todos.find();
+  //return Todos.find({listId: listId});
 });
 
 Meteor.publish("userData", function () {
