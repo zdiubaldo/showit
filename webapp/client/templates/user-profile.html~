@@ -21,7 +21,7 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="text" name="firstName" placeholder="First Name" value={{getCurrentFirstName}} />
+            <input type="text" name="firstName" placeholder="Address" value={{getCurrentFirstName}} />
             <span class="icon-email" title="First Name"></span>
           </div>
 
