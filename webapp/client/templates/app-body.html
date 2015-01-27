@@ -25,8 +25,10 @@
       {{/if}}
 
       <div class="list-todos">
+        {{#if currentUser}}
         <a class="js-new-showing"><span class="icon-plus"></span>New Showing</a>
-        <a class="js-current-showings"><span class="icon-plus"></span>Current Showings</a>  
+        <a class="js-current-showings"><span class="icon-plus"></span>Current Showings</a>
+        {{/if}}
     <!--      
         <a class="js-new-list link-list-new"><span class="icon-plus"></span>New List</a>
     -->
