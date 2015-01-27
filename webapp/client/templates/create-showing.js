@@ -166,6 +166,7 @@ Template.createShowing.events({
       listId: this._id,
       showingOwner: Meteor.userId(),
       showingDate: event.target.showingDate.value,
+      showingTime: event.target.showingTime.value,    
       showingAddress: event.target.showingAddress.value,
       showingCity: event.target.showingCity.value,
       showingZip: event.target.showingZip.value,
