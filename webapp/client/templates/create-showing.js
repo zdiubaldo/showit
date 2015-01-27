@@ -44,6 +44,10 @@ Template.createShowing.helpers({
   todos: function(listId) {
     return Todos.find();
       //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+  },
+  
+  createDebug: function() {
+    console.log("create-showing showingID = " + Router.current().showingID);
   }
 });
 
