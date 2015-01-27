@@ -31,13 +31,23 @@
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="text" name="country" placeholder="Country" value={{getCurrentCountry}} />
-            <span class="icon-lock" title="Country"></span>
+            <input type="text" name="address" placeholder="Street Address" value={{getCurrentAddress}} />
+            <span class="icon-picture" title="Address"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'email'}}">
             <input type="text" name="city" placeholder="City" value={{getCurrentCity}} />
             <span class="icon-email" title="City"></span>
+          </div>
+            
+          <div class="input-symbol {{errorClass 'confirm'}}">
+            <input type="text" name="zipCode" placeholder="Zip Code" value={{getCurrentZipCode}} />
+            <span class="icon-lock" title="ZipCode"></span>
+          </div>
+            
+          <div class="input-symbol {{errorClass 'confirm'}}">
+            <input type="text" name="phoneNumber" placeholder="Phone Number" value={{getCurrentPhoneNumber}} />
+            <span class="icon-lock" title="PhoneNumber"></span>
           </div>
 
           <button type="submit" class="btn-primary">Save Profile</button>

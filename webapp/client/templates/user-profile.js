@@ -21,13 +21,21 @@ Template.profile.helpers({
     return  Meteor.user().profile.lastName;
   },
 
-  getCurrentCountry: function() {
-    return  Meteor.user().profile.country;
+  getCurrentAddress: function() {
+    return  Meteor.user().profile.address;
   },
 
   getCurrentCity: function() {
     return  Meteor.user().profile.city;
-  }
+  },
+ 
+  getCurrentZipCode: function() {
+    return  Meteor.user().profile.zipCode;
+  },
+    
+  getCurrentPhoneNumber: function() {
+    return  Meteor.user().profile.phoneNumber;
+  }    
 });
 
 Template.profile.events({
@@ -38,8 +46,10 @@ Template.profile.events({
     var profile = {
       firstName: template.$('[name=firstName]').val(),
       lastName: template.$('[name=lastName]').val(),
-      country: template.$('[name=country]').val(),
-      city: template.$('[name=city]').val()
+      address: template.$('[name=address]').val(),
+      city: template.$('[name=city]').val(),
+      zipCode: template.$('[name=zipCode]').val(),
+      phoneNumber: template.$('[name=phoneNumber]').val()
     },
     user = {
       profile: profile
