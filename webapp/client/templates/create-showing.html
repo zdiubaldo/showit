@@ -8,7 +8,7 @@
              <h1>Add Showing</h1>
         </div>
     </nav>
-      {{createDebug}}
+    {{#if todosReady}}
     <div class="content-scrollable list-items">
       <form class="js-showing-new todo-new input-symbol">
         <div>
@@ -20,7 +20,7 @@
         </div>  
         
         <div>
-          <input type="text" name="showingAddress" placeholder="Enter Address">
+          <input type="text" name="showingAddress" placeholder="Enter Address" value={{getShowingAddress}}>
         </div>
 
         <div>
@@ -66,5 +66,10 @@
       {{/if}}
     -->
     </div>
+      {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">Loading tasks...</div>
+          </div>
+      {{/if}}
   </div>
 </template>

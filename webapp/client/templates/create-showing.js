@@ -48,6 +48,15 @@ Template.createShowing.helpers({
   
   createDebug: function() {
     console.log("create-showing showingID = " + Router.current().showingID);
+  },
+    
+  getShowingAddress: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+      
+        console.log('showing createshowing- ' + showing.showingAddress);
+        return showing.showingAddress;
+      }
   }
 });
 
@@ -180,9 +189,6 @@ Template.createShowing.events({
       checked: false,
       createdAt: new Date()
     });
-
-
-    //console.log("done")
 
     Router.go('home')
 

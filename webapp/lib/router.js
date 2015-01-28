@@ -35,6 +35,22 @@ Router.map(function() {
   this.route('signin');
   this.route('profile');
   this.route('createShowing', {
+     onBeforeAction: function () {
+      console.log("listshow: here1");
+      // for now I have this hardcoded to the only list we have
+      // at some point we can probably clean all this up and dump the
+      // altogether
+      this.todosHandle = Meteor.subscribe('todos', 'StPhkW4Mepm5fpp3k');
+                console.log("listshow: here2");
+
+      if (this.ready()) {
+        // Handle for launch screen defined in app-body.js
+        dataReadyHold.release();
+          console.log("listshow: here3");
+      }
+        console.log("listshow: here4");
+    },  
+    
     action: function() {
       this.showingID = this.params.showingID; 
       console.log("showingID = "+this.showingID);
