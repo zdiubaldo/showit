@@ -50,14 +50,47 @@ Template.createShowing.helpers({
     console.log("create-showing showingID = " + Router.current().showingID);
   },
     
+  getShowingDate: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+        return showing.showingDate;
+      }
+  },
+    
+  getShowingTime: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+        return showing.showingTime;
+      }
+  },
+    
   getShowingAddress: function() {
       if (Router.current().showingID) {
         var showing = Todos.findOne(Router.current().showingID);
-      
-        console.log('showing createshowing- ' + showing.showingAddress);
         return showing.showingAddress;
       }
-  }
+  },
+  
+  getShowingCity: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+        return showing.showingCity;
+      }
+  },
+    
+  getShowingZip: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+        return showing.showingZip;
+      }
+  },
+    
+  getShowingMLS: function() {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+        return showing.showingMLS;
+      }
+  }    
 });
 
 var editList = function(list, template) {
