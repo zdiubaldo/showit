@@ -90,6 +90,18 @@ Template.createShowing.helpers({
         var showing = Todos.findOne(Router.current().showingID);
         return showing.showingMLS;
       }
+  },
+    
+  isDisabled: function () {
+      if (Router.current().showingID) {
+        var showing = Todos.findOne(Router.current().showingID);
+          if (showing.showingOwner === Meteor.userId()) {
+              return false;
+          }
+      } else {
+          return false
+      }
+      return true;
   }    
 });
 
@@ -225,5 +237,15 @@ Template.createShowing.events({
 
     Router.go('home')
 
+  },
+    
+  'submit .js-accept-showing': function() {
+    Todos.update(this._id, { $set: { showingAcceptedBy: Meteor.userId() } });
+      
+  },
+      
+  'submit .js-unaccept-showing': function() {
+    Todos.update(this._id, { $set: { showingAcceptedBy: "" } });
+      
   }
 });

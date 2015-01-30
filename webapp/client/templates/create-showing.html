@@ -12,38 +12,42 @@
     <div class="content-scrollable list-items">
       <form class="js-showing-new todo-new input-symbol">
         <div>
-          <input type="date" name="showingDate" placeholder="Enter Date" value={{getShowingDate}}>
+          <input type="date" name="showingDate" placeholder="Enter Date" value={{getShowingDate}} disabled="{{isDisabled}}">
         </div>
 
         <div>
-          <input type="time" name="showingTime" placeholder="Enter Time" value={{getShowingTime}}>
+          <input type="time" name="showingTime" placeholder="Enter Time" value={{getShowingTime}} disabled="{{isDisabled}}">
         </div>  
         
         <div>
-          <input type="text" name="showingAddress" placeholder="Enter Address" value={{getShowingAddress}}>
+          <input type="text" name="showingAddress" placeholder="Enter Address" value={{getShowingAddress}} disabled="{{isDisabled}}">
         </div>
 
         <div>
-          <input type="text" name="showingCity" placeholder="Enter City" value={{getShowingCity}}>
+          <input type="text" name="showingCity" placeholder="Enter City" value={{getShowingCity}} disabled="{{isDisabled}}">
         </div>
 
         <div>
-          <input type="text" name="showingZip" placeholder="Enter Zip Code" value={{getShowingZip}}>
+          <input type="text" name="showingZip" placeholder="Enter Zip Code" value={{getShowingZip}} disabled="{{isDisabled}}">
         </div>
 
         <div>
-          <input type="text" name="showingMLS" placeholder="Enter MLS Number" value={{getShowingMLS}}>
+          <input type="text" name="showingMLS" placeholder="Enter MLS Number" value={{getShowingMLS}} disabled="{{isDisabled}}">
         </div>  
-        
+          {{#if isDisabled}}
           <div>
-          <button type="submit" class="btn-primary">Save Showing</button>
-        </div>
-        
+              <button type="submit" class="btn-primary js-accept-showing">Accept</button>
+          </div>
+          {{else}}
           <div>
-        <a href="/">
-            <input type="button" class="btn-primary" value="Cancel" />
-        </a>
-       </div>
+              <button type="submit" class="btn-primary js-showing-new">Save Showing</button>
+          </div>
+          {{/if}}
+          <div>
+              <a href="/">
+                  <input type="button" class="btn-primary" value="Cancel" />
+              </a>
+          </div>          
       </form>
       <!--
       {{#if todosReady}}

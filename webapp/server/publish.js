@@ -12,8 +12,8 @@ Meteor.publish('privateLists', function() {
 
 Meteor.publish('todos', function(listId) {
   check(listId, String);
-
-    return Todos.find();
+    return Todos.find({ $or: [ { showingAcceptedBy: "" }, { showingAcceptedBy: this.userId }, { showingOwner: this.userId} ] });
+    //return Todos.find();
   //return Todos.find({listId: listId});
 });
 
