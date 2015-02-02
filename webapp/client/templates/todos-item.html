@@ -1,5 +1,21 @@
 <template name="todosItem">
-  <div class="list-item">
+  <tr>
+    <td> {{showingDate}} </td>
+    <td> {{showingTime}} </td>
+    <td> {{showingAddress}} </td>
+    <td> {{showingCity}} </td>
+    <td> {{#if isOwner}}
+      <button class="btn-primary js-delete-item">Remove</button>
+    {{else}}
+      {{#if isAcceptedOwner}}
+        <button class="btn-primary js-unaccept-item">UnAccept</button>
+      {{else}}
+        <button class="btn-primary js-accept-item">Accept</button>
+      {{/if}}
+    {{/if}}
+  </td>
+  </tr>
+  <!--
     <a href="{{pathFor 'createShowing'}}?showingID={{_id}}" class="list-todo {{activeListClass}}" title="testing">"{{showingDate}} | {{showingTime}} | {{showingAddress}}"</a>
     <input type="text" value="{{showingDate}} | {{showingTime}} | {{showingAddress}}" placeholder="Task name" disabled="true">
     {{#if isOwner}}
@@ -12,4 +28,5 @@
       {{/if}}
     {{/if}}
   </div>
+-->
 </template>
