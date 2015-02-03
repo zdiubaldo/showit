@@ -13,7 +13,7 @@ Template.todosItem.helpers({
   
   isAcceptedOwner: function () {
       return this.showingAcceptedBy === Meteor.userId();
-  },
+  }
     
 });
 

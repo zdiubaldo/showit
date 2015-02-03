@@ -235,12 +235,13 @@ Template.createShowing.events({
       createdAt: new Date()
     });
 
-    Router.go('home')
+    Router.go('home');
 
   },
     
-  'submit .js-accept-showing': function() {
-    Todos.update(this._id, { $set: { showingAcceptedBy: Meteor.userId() } });
+  'click .js-accept-showing': function() {
+    Todos.update(Router.current().showingID, { $set: { showingAcceptedBy: Meteor.userId() } });
+    Router.go('home');
       
   },
       

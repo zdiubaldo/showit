@@ -1,6 +1,6 @@
 <template name="todosItem">
   <div class="list-item">
-    <a href="{{pathFor 'createShowing'}}?showingID={{_id}}" class="list-todo {{activeListClass}}" title="testing">"{{showingDate}} | {{showingTime}} | {{showingAddress}}"</a>
+    <a href="{{pathFor 'createShowing'}}?showingID={{_id}}" class="list-todo {{activeListClass}}" title="testing">{{showingDate}} | {{showingTime}} | {{showingAddress}}</a>
     <input type="text" value="{{showingDate}} | {{showingTime}} | {{showingAddress}}" placeholder="Task name" disabled="true">
     {{#if isOwner}}
       <button class="btn-primary js-delete-item">Remove</button>
