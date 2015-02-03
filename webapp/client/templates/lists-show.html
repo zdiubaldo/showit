@@ -59,21 +59,34 @@
     </nav>
 
     <div class="content-scrollable list-items">
-      {{#if todosReady}}
-        
-          {{#each todos this}}
-            {{> todosItem}}
-          {{else}}
-            <div class="wrapper-message">
-              <div class="title-message">No tasks here</div>
-              <div class="subtitle-message">Add new tasks using the field above</div>
-            </div>
-          {{/each}}
-      {{else}}
-          <div class="wrapper-message">
-            <div class="title-message">Loading tasks...</div>
-          </div>
-      {{/if}}
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Address</th>
+                  <th>City</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody>
+            {{#if todosReady}}
+
+                {{#each todos this}}
+                  {{> todosItem}}
+                {{else}}
+                  <div class="wrapper-message">
+                    <div class="title-message">No tasks here</div>
+                    <div class="subtitle-message">Add new tasks using the field above</div>
+                  </div>
+                {{/each}}
+            {{else}}
+                <div class="wrapper-message">
+                  <div class="title-message">Loading tasks...</div>
+                </div>
+            {{/if}}
+          </tbody>
+      </table>
     </div>
   </div>
 </template>
