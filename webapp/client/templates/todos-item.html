@@ -1,5 +1,5 @@
 <template name="todosItem">
-  <tr>
+  <tr data-toggle="collapse" data-target="#{{_id}}" class="accordion-toggle">
     <td> {{showingDate}} </td>
     <td> {{showingTime}} </td>
     <td> {{showingAddress}} </td>
@@ -14,6 +14,51 @@
       {{/if}}
     {{/if}}
   </td>
+  </tr>
+  <tr >
+    <td colspan="5" class="hiddenRow">
+      <div class="accordian-body collapse" id="{{_id}}">
+        <form class="js-showing-new todo-new input-symbol">
+          <div>
+            <input type="date" name="showingDate" placeholder="Enter Date" value={{getShowingDate}} disabled="{{isDisabled}}">
+          </div>
+
+          <div>
+            <input type="time" name="showingTime" placeholder="Enter Time" value={{getShowingTime}} disabled="{{isDisabled}}">
+          </div>
+
+          <div>
+            <input type="text" name="showingAddress" placeholder="Enter Address" value={{getShowingAddress}} disabled="{{isDisabled}}">
+          </div>
+
+          <div>
+            <input type="text" name="showingCity" placeholder="Enter City" value={{getShowingCity}} disabled="{{isDisabled}}">
+          </div>
+
+          <div>
+            <input type="text" name="showingZip" placeholder="Enter Zip Code" value={{getShowingZip}} disabled="{{isDisabled}}">
+          </div>
+
+          <div>
+            <input type="text" name="showingMLS" placeholder="Enter MLS Number" value={{getShowingMLS}} disabled="{{isDisabled}}">
+          </div>
+            {{#if isDisabled}}
+            <div>
+                <button type="submit" class="btn-primary js-accept-showing">Accept</button>
+            </div>
+            {{else}}
+            <div>
+                <button type="submit" class="btn-primary js-showing-new">Save Showing</button>
+            </div>
+            {{/if}}
+            <div>
+                <a href="/">
+                    <input type="button" class="btn-primary" value="Cancel" />
+                </a>
+            </div>
+        </form>
+      </div>
+    </td>
   </tr>
   <!--
     <a href="{{pathFor 'createShowing'}}?showingID={{_id}}" class="list-todo {{activeListClass}}" title="testing">"{{showingDate}} | {{showingTime}} | {{showingAddress}}"</a>
